@@ -26,6 +26,7 @@ class BancoRAD:
 			sql = """SELECT * FROM solicitacoes ORDER BY id DESC"""
 			cursor.execute(sql)
 			resultados = cursor.fetchall()
+			cursor.close()
 			return resultados
 		except Exception as e:
 			print(f"Erro ao listar: {e}")
@@ -38,6 +39,7 @@ class BancoRAD:
 			sql = """SELECT * FROM solicitacoes WHERE aluno_nome ILIKE %s OR status ILIKE %s OR prioridade ILIKE %s"""
 			cursor.execute(sql, (busca, busca, busca))
 			resultados = cursor.fetchall()
+			cursor.close()
 			return resultados
 		except Exception as e:
 			print(f"Erro em pesquisar: {e}")

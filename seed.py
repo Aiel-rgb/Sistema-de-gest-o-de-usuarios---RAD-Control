@@ -1,6 +1,7 @@
 import random
 from faker import Faker
 from database import BancoRAD
+from datetime import date, timedelta
 
 fake = Faker('pt_BR')
 
@@ -18,7 +19,7 @@ for i in range(20):
     prioridade = random.choice(prioridades)
     status = random.choice(status_list)
     descricao = fake.sentence(nb_words=10)
-    prazo = fake.date_between(start_date="+1d", end_date="+30d")
+    prazo = date.today() + timedelta(days=random.randint(1,30))
 
     banco.inserir(nome,matricula,tipo,prioridade,status,descricao,prazo)
     print(f"Inserindo: {nome}...")

@@ -28,7 +28,9 @@ Sistema desktop desenvolvido em **Python + Tkinter** para gerenciamento de solic
 - **Python 3.12+**
 - **Tkinter** — Interface gráfica
 - **PostgreSQL** — Banco de dados relacional
+- **psycopg2-binary** — Conexão Python ↔ PostgreSQL
 - **Faker** — Geração de dados fictícios (seed)
+- **datetime** — Manipulação de datas nos registros fictícios
 
 ---
 

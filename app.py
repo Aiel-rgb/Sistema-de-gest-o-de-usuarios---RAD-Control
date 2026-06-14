@@ -164,7 +164,14 @@ class AppRAD:
         
         registros = self.banco.pesquisar(termo)
         for reg in registros:
-            self.tree.insert("","end",values=reg)
+            prioridade = reg[4].lower().strip()
+            if "alta" in prioridade:
+                tag = "alta"
+            elif "média" in prioridade:
+                tag = "media"
+            else:
+                tag = "baixa"
+            self.tree.insert("","end",values=reg, tags=(tag,))
 
 
     def recarregar(self):

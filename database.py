@@ -18,7 +18,7 @@ class BancoRAD:
 			self.conn.commit()
 			cursor.close()
 		except Exception as e:
-			print("Erro ao inserir; {e}")
+			print(f"Erro ao inserir: {e}")
 
 	def listar(self):
 		try:
